@@ -1,8 +1,14 @@
 package ge.tbc.testautomation.tests;
 
+import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.WebDriverRunner;
 import ge.tbc.testautomation.steps.PlaceOrderSteps;
 import ge.tbc.testautomation.steps.PurchaseConfirmationSteps;
-import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.*;
+
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.WebDriverConditions.url;
@@ -10,12 +16,29 @@ import static com.codeborne.selenide.WebDriverConditions.urlContaining;
 
 import ge.tbc.testautomation.pages.*;
 
-public class PurchaseLaptopE2ETest {
+public class PurchaseLaptopE2ETest extends BaseTest {
     private demoBlazeHomePage homePage = new demoBlazeHomePage();
     private demoBlazeProductPage productPage = new demoBlazeProductPage();
     private demoBlazeCartPage cartPage = new demoBlazeCartPage();
     private PlaceOrderSteps placeOrderModal = new PlaceOrderSteps();
     private PurchaseConfirmationSteps purchaseConfirmation = new PurchaseConfirmationSteps();
+
+    @BeforeMethod
+    public void navigateToHomePage() {
+        System.out.println("=== Navigating to  home page ===");
+        //homePage.openPage();
+    }
+
+    @AfterMethod
+    public void returnToHomePage() {
+        System.out.println("=== Returning to  home page ===");
+        //homePage.openPage();
+    }
+
+    @BeforeClass
+    public void setUp() {
+        Configuration.timeout = 10000;
+    }
 
     @Test(priority = 1)
     public void openHomePageAndGoToLaptops() {
