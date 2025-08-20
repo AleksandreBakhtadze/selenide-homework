@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Groups Suite">
+    <test name="Groups Test">
+        <groups>
+            <define name="SwoopTests">
+                <include name="swoop 1"/>
+                <include name="swoop 2"/>
+            </define>
+            <define name="TelerikTests">
+                <include name="Telerik 1"/>
+            </define>
+            <run>
+                <include name="SwoopTests"/>
+<!--
+                Telerik ტესტები ფეილდება სიტის ბუგების გამოე
+-->
+                <include name="TelerikTests"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="ge.tbc.testautomation.tests"></package>
+        </packages>
+    </test>
+</suite>

@@ -16,6 +16,7 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.prompt;
 import static org.testng.Assert.*;
 
+@Test(groups = "Telerik 1")
 public class TelerikTests {
 
 
