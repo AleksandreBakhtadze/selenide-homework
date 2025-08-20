@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNGBasics" parallel="tests" thread-count="2">
+<!--    <test name="includeExcludeTest">-->
+<!--        <classes>-->
+<!--            <class name="ge.tbc.testautomation.tests.TestNGBasics">-->
+<!--                <methods>-->
+<!--                    <include name="addToCartTest" />-->
+<!--                    <include name="proceedToCheckoutTest"/>-->
+<!--                    <include name="makePaymentTest"/>-->
+<!--                    <exclude name="validateImageSizes" />-->
+<!--                    <exclude name="sortOffers" />-->
+<!--                    <exclude name="validateBurgerMenu" />-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    ყველას ერთ ბრაუზერიის ტესტში, რომ ვწერდი როგორც ჩანს ერთიდა იგივე წებდრივერს ყენებდნე-->
+<!--    და ერთიკლასის ტესტის დროს მეორე კლასი ცვლიდა საიტს. სამწუხაროდ მოგვარების გზას ვერ მივაგენი -->
+<!--    და ცალცალკე ტესტებში გავიტანე. ის კლასები ძველი დაველებებიდან
+ რომლებსაც თავისი პრობლემები ქონდათ პარალელურად აღარ გავუშვი -->
+
+    <test name="Chrome PurchaseLaptop">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.PurchaseLaptopE2ETest"/>
+        </classes>
+    </test>
+
+    <test name="Chrome SauceDemo">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.TestNGBasics"/>
+        </classes>
+    </test>
+
+    <test name="Chrome TelerikDemo">
+        <parameter name="browserType" value="chrome"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.TelerikDemosDesignTests"/>
+        </classes>
+    </test>
+
+    <test name="Firefox PurchaseLaptop">
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.PurchaseLaptopE2ETest"/>
+        </classes>
+    </test>
+
+    <test name="Firefox SauceDemo">
+        <parameter name="browserType" value="firefox"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.TestNGBasics"/>
+        </classes>
+    </test>
+
+<!-- MoveTargetOutOfBoundsException ფაიერფოქსის შემთხვევაში
+   <test name="Firefox TelerikDemo">-->
+<!--        <parameter name="browserType" value="firefox"/>-->
+<!--        <classes>-->
+<!--            <class name="ge.tbc.testautomation.tests.TelerikDemosDesignTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
